@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
     Реализовать простой калькулятор
  */
-public class Main {
+public class Task3 {
     public static void main(String[] args) throws IllegalStateException {
         int choice = -1;
         Scanner scanner = new Scanner(System.in);
@@ -60,10 +60,16 @@ public class Main {
         return a*b;
     }
     private static int division(int a, int b){
-        return a/b;
+        if (b != 0)
+            return a/b;
+        System.out.println("ERROR: Division by 0");
+        return Integer.MAX_VALUE;
     }
     private static int remainder(int a, int b){
-        return a%b;
+        if (b != 0)
+            return a%b;
+        System.out.println("ERROR: Division by 0");
+        return Integer.MIN_VALUE;
     }
 
 }

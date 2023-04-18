@@ -7,13 +7,13 @@ import java.util.Scanner;
 public class Task1 {
     public static void main(String[] args) {
 
-        //test();
+        // test();
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter an integer number: ");
         int n = scanner.nextInt();
-        System.out.println("Triangle number for " + n + " is " + triangleNumber(n));
-        System.out.println("Factorial number for " + n + " is " + factorial(n));
+        System.out.printf("Triangle number for %d is %d\n", n, triangleNumber(n));
+        System.out.printf("Factorial number for %d is %d\n", n, factorial(n));
     }
 
     public static void test(){
