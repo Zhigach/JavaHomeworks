@@ -11,17 +11,29 @@ import java.util.Scanner;
 public class Task4{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Enter equation from template q + w = e, (e.g. 2? + ?5 = 69): ");
+        //String input = scanner.nextLine();
         String testString = "2? + ?5 = 69";
         String[] numbersStrings = testString.split(" ");
         byte[][] numbers;
         numbers = new byte[][] {parseStringToInt(numbersStrings[0]),
                                 parseStringToInt(numbersStrings[2]),
                                 parseStringToInt(numbersStrings[4])};
-        byte[] testArr = new byte[] {1, 0, 0, 0};
-        recursiveIter(testArr);
+        byte[][] variablesPositions = new byte[][]{};
 
 
+    }
+    public static byte[][] findVariables(byte[] array){
+        int depth = array.length;
+        byte[] result = new byte[] {};
+        for (int i = 0; i < depth; i++) {
+            if (array[i] == -1)
+
+                result[i] = -1;
+            else
+                result[i] = Byte.parseByte(String.valueOf(numInString.charAt(i)));
+        }
+        return ;
     }
     public static byte[] parseStringToInt(String numInString){ // -1 replaces ? - variable value
         int depth = numInString.length();
@@ -39,18 +51,23 @@ public class Task4{
         return new int[] {0};
     }
 
-    private static void recursiveIter(byte[] arr){ //assume the 0 element is an index of previously changed
-        System.out.println(Arrays.toString(arr));
-        if (arr[0] + 1 >= arr.length || arr[arr[0]] == 9)
-            return;
-        else {
-            for (int i = 0; i < 9; i++) {
-                arr[arr[0]]++;
-                byte[] arrayCopy = new byte[arr.length];
-                System.arraycopy(arr,0, arrayCopy, 0, arr.length);
-                arrayCopy[0]++;
-                recursiveIter(arrayCopy);
-            }
+    private static byte[][] generatePermutations(byte positionsNumber) { // честно украдено со стэковерфлоу https://stackoverflow.com/a/73374413, сам не успел осилить задачу
+        //Array that holds a single permutation, e.g., {0,1,1}
+        byte[][] permutations = new byte[(int) Math.pow(10, positionsNumber)][(int) Math.pow(10, positionsNumber)];
+        byte[] permutation = new byte[positionsNumber];
+        do {
+            System.out.println(Arrays.toString(permutation));
+        } while (increaseRightMostPosition(permutation));
+        return permutations;
+    }
+    private static boolean increaseRightMostPosition(byte[] permutation) {
+        for (int i = permutation.length - 1; i >= 0; i--) {
+            permutation[i]++;
+            if (permutation[i] > 9)
+                permutation[i] = 0;
+            else
+                return true;
         }
+        return false;
     }
 }
