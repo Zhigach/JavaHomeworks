@@ -75,7 +75,7 @@ public class Task4{
             }
             else {
                 int value = Integer.parseInt(String.valueOf(numInString.charAt(i)));
-                sumLocal += value * pow(10, (numInString.length() - i) -1) ; // TODO учесть вес
+                sumLocal += value * pow(10, (numInString.length() - i) -1) ;
             }
         }
         return new int[] {sumLocal, countLocal};
