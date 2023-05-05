@@ -4,7 +4,7 @@
  */
 
 import java.io.*;
-import java.util.HashMap;
+import java.util.*;
 
 public class Task2 {
     // cat task2.in | sort | uniq -c
@@ -25,6 +25,15 @@ public class Task2 {
             line = br.readLine();
         }
 
-        System.out.println(nameCounter.toString());
+        printMapSortedByValue(nameCounter);
+
+    }
+
+    private static void printMapSortedByValue(HashMap<String, Integer> map) {
+        List<Integer> valuesList = new ArrayList<>(map.values());
+        valuesList.sort(Comparator.reverseOrder());
+        for (int value : valuesList) {
+
+        }
     }
 }
