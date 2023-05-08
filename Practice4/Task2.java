@@ -11,7 +11,7 @@ import java.util.Random;
 public class Task2 {
     public static void main(String[] args) {
         Queue queue = new Queue();
-        queue = createRandomQueue(10, 0, 10);
+        queue = createRandomQueue(5, 0, 10);
         System.out.printf("Initial queue: %s\n", queue);
         queue.enqueue(5);
         System.out.printf("Enqueue demo, pushing 5: %s\n", queue);
