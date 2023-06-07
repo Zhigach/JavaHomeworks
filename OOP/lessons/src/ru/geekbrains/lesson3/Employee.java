@@ -1,27 +1,38 @@
-package ru.geekbrains.lesson3.task2;
+package lessons.src.ru.geekbrains.lesson3;
 
 public abstract class Employee implements Comparable<Employee> {
 
     protected String name;
     protected String surname;
-    protected double salary; // Ставка заработной платы
+    /**
+     * salary in UE per hour
+     */
+    protected double baseSalary; // UE/hour
+    protected double salary;
+    protected int age;
+    protected int experience;
 
     public String getName() {
         return name;
     }
-
     public String getSurname() {
         return surname;
     }
-
-    public double getSalary() {
-        return salary;
+    public double getBaseSalary() {
+        return baseSalary;
     }
-
-    public Employee(String name, String surname, double salary) {
+    public int getAge() {
+        return age;
+    }
+    public int getExperience() {
+        return experience;
+    }
+    public Employee(String name, String surname, int age, int experience, double baseSalary) {
         this.name = name;
         this.surname = surname;
-        this.salary = salary;
+        this.age = age;
+        this.experience = experience;
+        this.baseSalary = baseSalary;
     }
 
     /**
