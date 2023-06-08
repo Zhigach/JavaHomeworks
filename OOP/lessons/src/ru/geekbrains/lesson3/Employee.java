@@ -41,12 +41,19 @@ public abstract class Employee implements Comparable<Employee> {
      */
     public abstract double calculateSalary();
 
+    /*
+    Сортировка по должности (имени класса), по фамилии и зарплате
+    */
+
     @Override
     public int compareTo(Employee o) {
-        int res = surname.compareTo(o.surname);
-        if (res == 0)
+        int res = this.getClass().getName().compareTo(o.getClass().getName());
+        if (res == 0) {
+            res = surname.compareTo(o.getSurname());
+        }
+        if (res == 0) {
             return Double.compare(calculateSalary(), o.calculateSalary());
-        else
-            return res;
+        }
+        return res;
     }
 }

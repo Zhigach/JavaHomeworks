@@ -9,7 +9,7 @@ public class Worker extends Employee {
 
     @Override
     public double calculateSalary() {
-        return baseSalary*8*20;
+        return baseSalary*8*20 * Math.max(Math.pow(experience, 0.5),1);
     }
 
     @Override

@@ -23,8 +23,8 @@ public class Program {
                         names[random.nextInt(names.length)],
                         surnames[random.nextInt(surnames.length)],
                         age,
-                        random.nextInt(0, (age - 20)),
-                        random.nextInt(5, 8));
+                        random.nextInt(0, (age - 19)),
+                        random.nextInt(6, 8));
             }
             case 2 -> {
                 int age = random.nextInt(25, 40);
@@ -32,8 +32,8 @@ public class Program {
                         names[random.nextInt(names.length)],
                         surnames[random.nextInt(surnames.length)],
                         age,
-                        random.nextInt(0, (age - 25)),
-                        random.nextInt(3, 4));
+                        random.nextInt(0, (age - 24)),
+                        random.nextInt(4, 6));
             }
             default -> {
                 int age = random.nextInt(0, 10);
@@ -49,12 +49,6 @@ public class Program {
     }
 
 
-    /**
-     * TODO: Придумать новые состояния для наших сотрудников
-     *  Придумать несколько Comparator'ов для сортировки сотрудников
-     *  по фамилии + имени или по возрасту и уровню ЗП.
-     * @param args
-     */
     public static void main(String[] args) {
 
         Employee[] employees = new Employee[10];

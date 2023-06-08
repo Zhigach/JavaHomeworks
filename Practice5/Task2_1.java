@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-/* TODO: Реализовать алгоритм пирамидальной сортировки (HeapSort)
+/* ODO: Реализовать алгоритм пирамидальной сортировки (HeapSort)
 *   пусть будет сортировка по возрастанию*/
 public class Task2_1 {
     public static void main(String[] args) {
