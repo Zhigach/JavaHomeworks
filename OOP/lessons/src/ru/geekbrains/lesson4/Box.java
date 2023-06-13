@@ -32,7 +32,7 @@ public class Box<T extends Fruit>{
         return box.size();
     }
 
-    public boolean compare(Box<T> box) {
+    public boolean compare(Box<?> box) {
         return this.getWeight() == box.getWeight();
     }
 }

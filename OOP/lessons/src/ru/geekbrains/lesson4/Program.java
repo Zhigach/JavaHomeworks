@@ -32,10 +32,12 @@ public class Program {
 
         Box<Orange> orangeBox = new Box<>();
         orangeBox.addFruit(new Orange("EGYPT"));
-        orangeBox.addFruit(new Orange("EGYPT"));
+        //orangeBox.addFruit(new Orange("EGYPT"));
         orangeBox.addFruit(new Orange("UAR"));
 
         System.out.printf("В ящике с апельсинами %f условных единиц массы фруктов\n", orangeBox.getWeight());
+
+        System.out.println(appleBox1.compare(orangeBox));
 
         //Try to add oranges to apple box
         //appleBox2.takeFromBox(orangeBox); - compiler prohibits such actions (/)
