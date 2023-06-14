@@ -1,6 +1,7 @@
-package ru.geekbrains.lesson5.views;
+package lessons.src.ru.geekbrains.lesson5.views;
 
-import ru.geekbrains.lesson5.models.Table;
+import lessons.src.ru.geekbrains.lesson5.models.Reservation;
+import lessons.src.ru.geekbrains.lesson5.models.Table;
 
 import java.util.Collection;
 import java.util.Date;
@@ -19,9 +20,14 @@ public class BookingView implements View{
     }
     @Override
     public void updateTablesView(Collection<Table> tables) {
+        System.out.println("TABLES RESERVATION INFO:");
         for (Table table: tables) {
             System.out.println(table);
+            for (Reservation reservation: table.getReservations()) {
+                System.out.printf("\tReservation #%d: Client - %s\n", reservation.getId(), reservation.getName());
+            }
         }
+        System.out.println("--- END ---\n\n");
     }
 
     /**
@@ -34,14 +40,14 @@ public class BookingView implements View{
         observer.onReservationtable(date, tableNum, name);
     }
 
-    /** TODO: Доработать метод в рамках ДЗ
+    /**
      * Client asks us to change existing reservation
-     * @param oldReservation
-     * @param date
-     * @param tableNum
-     * @param name
+     * @param oldReservation old reservation number
+     * @param date new date
+     * @param tableNum number of new table to reserve
+     * @param name client's name
      */
     public void changeReservationTable(int oldReservation, Date date, int tableNum, String name) {
-
+        observer.onChangeReservationTable(oldReservation, date, tableNum, name);
     }
 }
