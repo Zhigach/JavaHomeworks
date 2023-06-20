@@ -1,4 +1,4 @@
-package lessons.src.ru.geekbrains.lesson5.views;
+package ru.geekbrains.lesson5.views;
 
 import java.util.Date;
 

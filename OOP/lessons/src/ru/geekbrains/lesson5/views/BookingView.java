@@ -1,7 +1,7 @@
-package lessons.src.ru.geekbrains.lesson5.views;
+package ru.geekbrains.lesson5.views;
 
-import lessons.src.ru.geekbrains.lesson5.models.Reservation;
-import lessons.src.ru.geekbrains.lesson5.models.Table;
+import ru.geekbrains.lesson5.models.Reservation;
+import ru.geekbrains.lesson5.models.Table;
 
 import java.util.Collection;
 import java.util.Date;

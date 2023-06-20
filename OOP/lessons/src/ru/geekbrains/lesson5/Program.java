@@ -1,8 +1,8 @@
-package lessons.src.ru.geekbrains.lesson5;
+package ru.geekbrains.lesson5;
 
-import lessons.src.ru.geekbrains.lesson5.models.TableModel;
-import lessons.src.ru.geekbrains.lesson5.presenters.BookingPresenter;
-import lessons.src.ru.geekbrains.lesson5.views.BookingView;
+import ru.geekbrains.lesson5.models.TableModel;
+import ru.geekbrains.lesson5.presenters.BookingPresenter;
+import ru.geekbrains.lesson5.views.BookingView;
 
 import java.util.Date;
 
