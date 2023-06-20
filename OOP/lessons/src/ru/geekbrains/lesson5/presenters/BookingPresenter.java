@@ -1,9 +1,9 @@
-package ru.geekbrains.lesson5.presenters;
+package lessons.src.ru.geekbrains.lesson5.presenters;
 
-import ru.geekbrains.lesson5.models.Model;
-import ru.geekbrains.lesson5.models.Table;
-import ru.geekbrains.lesson5.views.View;
-import ru.geekbrains.lesson5.views.ViewObserver;
+import lessons.src.ru.geekbrains.lesson5.models.Model;
+import lessons.src.ru.geekbrains.lesson5.models.Table;
+import lessons.src.ru.geekbrains.lesson5.views.View;
+import lessons.src.ru.geekbrains.lesson5.views.ViewObserver;
 
 import java.util.Collection;
 import java.util.Date;
@@ -35,6 +35,10 @@ public class BookingPresenter implements ViewObserver {
     @Override
     public void onReservationtable(Date date, int tableNum, String name) {
         int reservationNum = tableModel.reserveTable(date, tableNum, name);
+        showReservationTableResult(reservationNum);
+    }
+    public void onChangeReservationTable(int oldReservation, Date date, int tableNum, String name) {
+        int reservationNum = tableModel.changeReservationTable(oldReservation, date, tableNum, name);
         showReservationTableResult(reservationNum);
     }
 }

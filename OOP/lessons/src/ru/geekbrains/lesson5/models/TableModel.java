@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson5.models;
+package lessons.src.ru.geekbrains.lesson5.models;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -35,21 +35,34 @@ public class TableModel implements Model{
     public int reserveTable(Date date, int tableNum, String name) {
         for (Table table: tables) {
             if (table.getNo() == tableNum) {
-                Reservation reservation = new Reservation(name, date);
-                table.getReservations().add(reservation);
-                return reservation.getId();
+
+                if (!table.getReservations().isEmpty()) {
+                    return -2;
+                } else {
+                    Reservation reservation = new Reservation(name, date);
+                    table.getReservations().add(reservation);
+                    return reservation.getId();
+                }
+
             }
         }
-        return  -1;  //throw new RuntimeException("Incorrect table number");
+        return  -1; //throw new RuntimeException("Incorrect table number");
     }
 
 
-    /** TODO:  Разработать метод самостоятельно в рамках домашнего задания
+    /**
      * Change the reservation parameters (create new reservation in exchange)
      * @return
      */
-    public boolean changeReservationTable() {
-        //TODO: использовать существующий метод создания резерва
-        return true;
+    public int changeReservationTable(int oldReservation, Date date, int tableNum, String name) {
+        for (Table table: tables) {
+            for (Reservation reservation: table.getReservations()) {
+                if (reservation.getId() == oldReservation) {
+                    table.getReservations().remove(reservation);
+                    return reserveTable(date, tableNum, name);
+                }
+            }
+        }
+        return -1;
     }
 }

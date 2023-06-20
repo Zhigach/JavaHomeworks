@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson3;
+package lessons.src.ru.geekbrains.lesson3;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -7,11 +7,7 @@ public class Program {
 
     static Random random = new Random();
 
-    /**
-     * TODO: Переработать метод generateEmployee в рамках домашнего задания,
-     *  метод должен генерировать рабочих (Employee) разных типов.
-     * @return
-     */
+
     static Employee generateEmployee(){
         String[] names = new String[] { "Анатолий", "Глеб", "Клим", "Мартин", "Лазарь", "Владлен", "Клим", "Панкратий", "Рубен", "Герман" };
         String[] surnames = new String[] { "Григорьев", "Фокин", "Шестаков", "Хохлов", "Шубин", "Бирюков", "Копылов", "Горбунов", "Лыткин", "Соколов" };

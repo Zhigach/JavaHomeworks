@@ -1,4 +1,4 @@
-package ru.geekbrains.lesson3;
+package lessons.src.ru.geekbrains.lesson3;
 
 import java.util.Comparator;
 

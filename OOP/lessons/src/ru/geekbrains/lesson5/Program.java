@@ -1,8 +1,8 @@
-package ru.geekbrains.lesson5;
+package lessons.src.ru.geekbrains.lesson5;
 
-import ru.geekbrains.lesson5.models.TableModel;
-import ru.geekbrains.lesson5.presenters.BookingPresenter;
-import ru.geekbrains.lesson5.views.BookingView;
+import lessons.src.ru.geekbrains.lesson5.models.TableModel;
+import lessons.src.ru.geekbrains.lesson5.presenters.BookingPresenter;
+import lessons.src.ru.geekbrains.lesson5.views.BookingView;
 
 import java.util.Date;
 
@@ -22,7 +22,9 @@ public class Program {
         bookingPresenter.showTables();
 
         bookingView.reservationTable(new Date(), 103, "Qwerty John");
+        bookingPresenter.showTables();
 
-        //TODO: bookingView.changeReservationTable();
+        bookingView.changeReservationTable(9001, new Date(), 104, "Thomas Anderson");
+        bookingPresenter.showTables();
     }
 }
