@@ -10,6 +10,8 @@ public class JobAgency implements Publisher {
     @Override
     public void registerObserver(Observer observer) {
         observers.add(observer);
+        System.out.print("Successfully registered: ");
+        observer.printInfo();
     }
 
     @Override
@@ -18,9 +20,13 @@ public class JobAgency implements Publisher {
     }
 
     @Override
-    public void sendOffer(String nameCompany, int salary) {
+    public void sendOffer(Vacancy vacancy) {
         for (Observer observer: observers) {
-            observer.receiveOffer(nameCompany, salary);
+            if (observer.getDutiesSet().contains(vacancy.requestedDuties)) {
+                observer.receiveOffer(vacancy);
+            } else {
+                System.out.printf("Not sending %s to %s\n", vacancy, observer);
+            }
         }
     }
 }

@@ -6,6 +6,6 @@ public interface Publisher {
 
     void removeObserver(Observer observer);
 
-    void sendOffer(String nameCompany, int salary);
+    void sendOffer(Vacancy vacancy);
 
 }

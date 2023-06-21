@@ -1,25 +1,13 @@
 package ru.geekbrains.lesson7.observer;
 
-import java.util.Random;
-
-public class EffectiveManager implements Observer{
-    Duties duties;
-    String name;
-    int minSalary;
+public class EffectiveManager extends Worker{
     public EffectiveManager(String name) {
-        this.name = name;
-        minSalary = random.nextInt();
+        super(name, random.nextInt(150, 300) * 1000);
+        dutiesSet.add(Duties.VisionOfWorking);
     }
+
     @Override
-    public void receiveOffer(String nameCompany, int salary) {
-        if (minSalary <= salary){
-            System.out.printf("Эффективный менеджер %s (%d) >>> Мне нужна эта работа! (%s - %d)\n",
-                    name, minSalary, nameCompany, salary);
-            minSalary = salary;
-        }
-        else{
-            System.out.printf("Эффективный менеджер %s (%d) >>> Я найду работу получше... (%s - %d)\n",
-                    name, minSalary, nameCompany, salary);
-        }
+    public String className() {
+        return "Эффективный менеджер";
     }
 }

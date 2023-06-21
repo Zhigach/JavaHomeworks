@@ -1,5 +1,7 @@
 package ru.geekbrains.lesson7.observer;
 
+import java.util.Random;
+
 public class Program {
 
 
@@ -13,29 +15,36 @@ public class Program {
 
         JobAgency jobAgency = new JobAgency();
 
-        Student student1 = new Student("A");
-        Object student2 = new Student("B");
-        Observer student3 = new Student("C");
-
-
-        Company geekBrains = new Company("GeekBrains", 70000, jobAgency);
-        Company google = new Company("Google", 100000, jobAgency);
-        Company yandex = new Company("Yandex", 120000, jobAgency);
+        Company geekBrains = new Company("GeekBrains", 70, jobAgency);
+        Company google = new Company("Google", 100, jobAgency);
+        Company yandex = new Company("Yandex", 120, jobAgency);
 
         Master ivanov = new Master("Ivanov");
         Master petrov = new Master("Petrov");
         Student sidorov = new Student("Sidorov");
+        EffectiveManager owl = new EffectiveManager("Сова");
 
         jobAgency.registerObserver(ivanov);
         jobAgency.registerObserver(petrov);
         jobAgency.registerObserver(sidorov);
+        jobAgency.registerObserver(owl);
 
+        Vacancy vacancy;
         for (int i = 0; i < 5; i++){
-            geekBrains.needEmployee();
-            google.needEmployee();
-            yandex.needEmployee();
-        }
 
+            vacancy = geekBrains.createVacancy(getRandomDuty());
+            geekBrains.publishVacancy(vacancy);
+
+            vacancy = google.createVacancy(getRandomDuty());
+            google.publishVacancy(vacancy);
+
+            vacancy = yandex.createVacancy(getRandomDuty());
+            yandex.publishVacancy(vacancy);
+        }
     }
 
+    static Duties getRandomDuty() {
+        Random random = new Random();
+        return Duties.values()[random.nextInt(Duties.values().length)];
+    }
 }
