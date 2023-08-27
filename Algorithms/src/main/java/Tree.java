@@ -1,6 +1,7 @@
 package src.main.java;
 
 import java.util.List;
+import java.util.Random;
 
 public class Tree {
     /*
@@ -37,7 +38,16 @@ public class Tree {
 
         //TODO реализовать добавление элементов в дерево
         public void simpleAdd(int value) {
-
+            Node currentNode = this;
+            Random random = new Random();
+            while (!currentNode.children.isEmpty() ) {
+                try {
+                    currentNode = currentNode.children.get(random.nextInt(2));
+                } finally {
+                    currentNode = currentNode.children.get(0);
+                }
+            }
+            currentNode.children.add(new Node(value));
         }
     }
 

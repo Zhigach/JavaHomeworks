@@ -1,3 +1,5 @@
+package src.main.java;
+
 public class Practice1 {
     // TODO: Реализовать алгоритм пирамидальной сортировки (сортировка кучей).
     public static void main(String[] args) {
