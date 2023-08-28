@@ -26,11 +26,15 @@ public class Tree {
 
     //TODO реализовать дерево, поиск элементов в нем
 
+    enum Color {
+        RED, BLACK;
+    }
     Node root;
 
     static class Node {
         List<Node> children;
         int value;
+        Color color;
 
         public Node(int value) {
             this.value = value;
@@ -49,6 +53,15 @@ public class Tree {
             }
             currentNode.children.add(new Node(value));
         }
+
+        void smallLeftPivot (){
+
+        }
+
+        void rightPivot () {
+
+        }
+
     }
 
 
