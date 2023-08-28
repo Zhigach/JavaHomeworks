@@ -1,7 +1,9 @@
 package src.main.java;
 
 import java.util.List;
-import java.util.Random;
+
+import static src.main.java.Tree.Color.BLACK;
+import static src.main.java.Tree.Color.RED;
 
 public class Tree {
     /*
@@ -20,8 +22,8 @@ public class Tree {
      */
 
     public static void main(String[] args) {
-        Node root = new Node(0);
-        root.simpleAdd(1);
+        root.simpleAdd(24);
+
     }
 
     //TODO реализовать дерево, поиск элементов в нем
@@ -29,29 +31,29 @@ public class Tree {
     enum Color {
         RED, BLACK;
     }
-    Node root;
+    static Node root;
 
     static class Node {
         List<Node> children;
         int value;
         Color color;
 
-        public Node(int value) {
+        public Node(int value, Color color) {
             this.value = value;
+            this.color = color;
         }
 
         //TODO реализовать добавление элементов в дерево
         public void simpleAdd(int value) {
-            Node currentNode = this;
-            Random random = new Random();
-            while (!currentNode.children.isEmpty() ) {
-                try {
-                    currentNode = currentNode.children.get(random.nextInt(2));
-                } finally {
+            if (root == null) {
+                root = new Node(value, BLACK);
+            } else {
+                Node currentNode = root;
+                while (!currentNode.children.isEmpty()) {
                     currentNode = currentNode.children.get(0);
                 }
+                root.children.add(new Node(value, RED));
             }
-            currentNode.children.add(new Node(value));
         }
 
         void smallLeftPivot (){
@@ -59,6 +61,10 @@ public class Tree {
         }
 
         void rightPivot () {
+
+        }
+
+        void swapColor() {
 
         }
 
