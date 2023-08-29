@@ -1,6 +1,7 @@
 package src.main.java;
 
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
 import static src.main.java.Tree.Color.BLACK;
 import static src.main.java.Tree.Color.RED;
@@ -22,7 +23,7 @@ public class Tree {
      */
 
     public static void main(String[] args) {
-        root.simpleAdd(24);
+        root.addNode(24);
 
     }
 
@@ -34,7 +35,8 @@ public class Tree {
     static Node root;
 
     static class Node {
-        List<Node> children;
+        Node leftChild;
+        Node rightChild;
         int value;
         Color color;
 
@@ -44,30 +46,82 @@ public class Tree {
         }
 
         //TODO реализовать добавление элементов в дерево
-        public void simpleAdd(int value) {
+        private void addNode(int value) {
             if (root == null) {
                 root = new Node(value, BLACK);
             } else {
                 Node currentNode = root;
-                while (!currentNode.children.isEmpty()) {
-                    currentNode = currentNode.children.get(0);
+                if (value > currentNode.value) {
+                    if (rightChild == null){
+                        rightChild = new Node(value, RED);
+                        if (leftChild.color == BLACK) {
+                            leftPivot(); // если правая нода красная и левая нода черная - левосторонний поворот
+                        }
+                    } else {
+                        rightChild.addNode(value);
+                    }
+                } else {
+                    if (leftChild == null){
+                        leftChild = new Node(value, RED);
+                        this.balance();
+                    } else {
+                        leftChild.addNode(value);
+                    }
                 }
-                root.children.add(new Node(value, RED));
             }
         }
 
-        void smallLeftPivot (){
-
+        void leftPivot (){
+            Node tmp = this.rightChild;
+            if (this.rightChild.leftChild != null)
+                this.rightChild =this.rightChild.leftChild;
+            else
+                this.rightChild = null;
+            tmp.leftChild = this;
         }
 
         void rightPivot () {
-
+            Node tmp = this.leftChild;
+            if (this.leftChild.rightChild != null)
+                this.leftChild = this.leftChild.rightChild;
+            else
+                this.leftChild = null;
+            tmp.rightChild = this;
         }
 
-        void swapColor() {
-
+        void swapColor() throws Exception {
+            if (this.leftChild.color == RED && this.rightChild.color == RED) {
+                leftChild.color = BLACK;
+                rightChild.color = BLACK;
+                this.color = RED;
+            } else {
+                throw new Exception("Not all children are RED");
+            }
         }
+    }
 
+    //TODO метод для печати дерева. По сути поиск без поиска в ширину
+    void printTree() {
+        printTree(root);
+    }
+
+    void printTree(Node node) {
+        Node currentNode = root;
+        ArrayDeque<Node> listToPrint = new ArrayDeque<>();
+        while (!listToPrint.isEmpty()) {
+            listToPrint.add(currentNode);
+            for (Node item : listToPrint) {
+                System.out.printf("%d (%s)\t", item.value, item.color.toString());
+                listToPrint.remove(item);
+            }
+            System.out.println();
+            if (currentNode.leftChild != null) {
+                listToPrint.add(currentNode.leftChild);
+            }
+            if (currentNode.rightChild != null) {
+                listToPrint.add(currentNode.rightChild);
+            }
+        }
     }
 
 
