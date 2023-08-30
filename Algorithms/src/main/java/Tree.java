@@ -1,7 +1,5 @@
 package src.main.java;
 
-import java.util.*;
-
 import static src.main.java.Tree.Color.BLACK;
 import static src.main.java.Tree.Color.RED;
 
@@ -192,7 +190,4 @@ public class Tree {
             throw new IllegalStateException("Parent is not a child of its grandparent");
         }
     }
-
-    //TODO реализовать добавление элементов в дерево
-
 }
