@@ -1,7 +1,6 @@
 package src.main.java;
 
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import static src.main.java.Tree.Color.BLACK;
 import static src.main.java.Tree.Color.RED;
@@ -22,124 +21,178 @@ public class Tree {
 
      */
 
-    public static void main(String[] args) {
-        root.addNode(24);
-
+    public static void main(String[] args) throws Exception {
+       insertNode(24);
+       insertNode(10);
+       insertNode(15);
     }
-
-    //TODO реализовать дерево, поиск элементов в нем
 
     enum Color {
         RED, BLACK;
     }
     static Node root;
 
-    static class Node {
-        Node leftChild;
-        Node rightChild;
-        int value;
+    public static class Node {
+        int data;
+
+        Node left;
+        Node right;
+        Node parent;
+
         Color color;
 
-        public Node(int value, Color color) {
-            this.value = value;
-            this.color = color;
-        }
-
-        //TODO реализовать добавление элементов в дерево
-        private void addNode(int value) {
-            if (root == null) {
-                root = new Node(value, BLACK);
-            } else {
-                Node currentNode = root;
-                if (value > currentNode.value) {
-                    if (rightChild == null){
-                        rightChild = new Node(value, RED);
-                        if (leftChild.color == BLACK) {
-                            leftPivot(); // если правая нода красная и левая нода черная - левосторонний поворот
-                        }
-                    } else {
-                        rightChild.addNode(value);
-                    }
-                } else {
-                    if (leftChild == null){
-                        leftChild = new Node(value, RED);
-                        this.balance();
-                    } else {
-                        leftChild.addNode(value);
-                    }
-                }
-            }
-        }
-
-        void leftPivot (){
-            Node tmp = this.rightChild;
-            if (this.rightChild.leftChild != null)
-                this.rightChild =this.rightChild.leftChild;
-            else
-                this.rightChild = null;
-            tmp.leftChild = this;
-        }
-
-        void rightPivot () {
-            Node tmp = this.leftChild;
-            if (this.leftChild.rightChild != null)
-                this.leftChild = this.leftChild.rightChild;
-            else
-                this.leftChild = null;
-            tmp.rightChild = this;
-        }
-
-        void swapColor() throws Exception {
-            if (this.leftChild.color == RED && this.rightChild.color == RED) {
-                leftChild.color = BLACK;
-                rightChild.color = BLACK;
-                this.color = RED;
-            } else {
-                throw new Exception("Not all children are RED");
-            }
+        public Node(int data) {
+            this.data = data;
         }
     }
 
-    //TODO метод для печати дерева. По сути поиск без поиска в ширину
-    void printTree() {
-        printTree(root);
-    }
+    private static void rotateRight(Node node) {
+        Node parent = node.parent;
+        Node leftChild = node.left;
 
-    void printTree(Node node) {
-        Node currentNode = root;
-        ArrayDeque<Node> listToPrint = new ArrayDeque<>();
-        while (!listToPrint.isEmpty()) {
-            listToPrint.add(currentNode);
-            for (Node item : listToPrint) {
-                System.out.printf("%d (%s)\t", item.value, item.color.toString());
-                listToPrint.remove(item);
-            }
-            System.out.println();
-            if (currentNode.leftChild != null) {
-                listToPrint.add(currentNode.leftChild);
-            }
-            if (currentNode.rightChild != null) {
-                listToPrint.add(currentNode.rightChild);
-            }
+        node.left = leftChild.right;
+        if (leftChild.right != null) {
+            leftChild.right.parent = node;
         }
+
+        leftChild.right = node;
+        node.parent = leftChild;
+
+        replaceParentsChild(parent, node, leftChild);
     }
 
+    private static void rotateLeft(Node node) {
+        Node parent = node.parent;
+        Node rightChild = node.right;
 
+        node.right = rightChild.left;
+        if (rightChild.left != null) {
+            rightChild.left.parent = node;
+        }
 
-    //TODO реализовать алгоритм поиска в глубину (рекурсивно)
-    Node deepSearch(int value) {
-        return deepSearch(root, value);
+        rightChild.left = node;
+        node.parent = rightChild;
+
+        replaceParentsChild(parent, node, rightChild);
     }
-    Node deepSearch(Node node, int value) {
-        if (node.value == value) {
-            return node;
+
+    private static void replaceParentsChild(Node parent, Node oldChild, Node newChild) {
+        if (parent == null) {
+            root = newChild;
+        } else if (parent.left == oldChild) {
+            parent.left = newChild;
+        } else if (parent.right == oldChild) {
+            parent.right = newChild;
         } else {
-            for (Node child : node.children) {
-                deepSearch(child, value);
-            }
+            throw new IllegalStateException("Node is not a child of its parent");
         }
-        return null;
+
+        if (newChild != null) {
+            newChild.parent = parent;
+        }
     }
 
-    //TODO реализовать алгоритм поиска в ширину (потребуется переменная хранящая список нод для обхода)
+    public static void insertNode(int key) {
+        Node node = root;
+        Node parent = null;
+
+        while (node != null) {
+            parent = node;
+            if (key < node.data) {
+                node = node.left;
+            } else if (key > node.data) {
+                node = node.right;
+            } else {
+                throw new IllegalArgumentException("BST already contains a node with key " + key);
+            }
+        }
+
+        Node newNode = new Node(key);
+        newNode.color = RED;
+        if (parent == null) {
+            root = newNode;
+        } else if (key < parent.data) {
+            parent.left = newNode;
+        } else {
+            parent.right = newNode;
+        }
+        newNode.parent = parent;
+
+        fixRedBlackPropertiesAfterInsert(newNode);
+    }
+
+    private static void fixRedBlackPropertiesAfterInsert(Node node) {
+        Node parent = node.parent;
+
+
+        if (parent == null) {
+            return;
+        }
+
+        if (parent.color == BLACK) {
+            return;
+        }
+
+        Node grandparent = parent.parent;
+
+
+        if (grandparent == null) {
+            parent.color = BLACK;
+            return;
+        }
+
+        Node uncle = getUncle(parent);
+
+
+        if (uncle != null && uncle.color == RED) {
+            parent.color = BLACK;
+            grandparent.color = RED;
+            uncle.color = BLACK;
+
+            fixRedBlackPropertiesAfterInsert(grandparent);
+        }
+
+
+        else if (parent == grandparent.left) {
+
+            if (node == parent.right) {
+                rotateLeft(parent);
+
+                parent = node;
+            }
+
+            rotateRight(grandparent);
+
+            parent.color = BLACK;
+            grandparent.color = RED;
+        }
+
+
+        else {
+
+            if (node == parent.left) {
+                rotateRight(parent);
+                parent = node;
+            }
+
+            rotateLeft(grandparent);
+
+            parent.color = BLACK;
+            grandparent.color = RED;
+        }
+    }
+
+    private static Node getUncle(Node parent) {
+        Node grandparent = parent.parent;
+        if (grandparent.left == parent) {
+            return grandparent.right;
+        } else if (grandparent.right == parent) {
+            return grandparent.left;
+        } else {
+            throw new IllegalStateException("Parent is not a child of its grandparent");
+        }
+    }
+
+    //TODO реализовать добавление элементов в дерево
+
 }
