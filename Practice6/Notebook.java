@@ -1,3 +1,5 @@
+package Practice6;
+
 public class Notebook {
     int ram;
     int disk_space;

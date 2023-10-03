@@ -1,3 +1,5 @@
+package Practice2;
+
 /*
 В файле содержится строка с исходными данными в такой форме:
 {"name":"Ivanov", "country":"Russia", "city":"Moscow", "age":"null"}
@@ -9,7 +11,6 @@ SELECT * FROM students WHERE name = "Ivanov" AND country = "Russia" AND city = "
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 
 public class Task1 {
     public static void main(String[] args) throws IOException {
