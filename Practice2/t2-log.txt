@@ -1,0 +1,30 @@
+==== Bubble sort log ====
+Step 0: [2, 5, 2, 4, 8]
+Step 1: [2, 2, 4, 5, 8]
+Step 2: [2, 2, 4, 5, 8]
+Step 3: [2, 2, 4, 5, 8]
+==== Sorting finished ====
+
+==== Bubble sort log ====
+Initial array: [7, 0, 3, 1, 2]Step 1: [0, 3, 1, 2, 7]
+Step 2: [0, 1, 2, 3, 7]
+Step 3: [0, 1, 2, 3, 7]
+Step 4: [0, 1, 2, 3, 7]
+==== Sorting finished ====
+
+==== Bubble sort log ====
+Initial array: [3, 9, 8, 7, 3]
+Step 1: [3, 8, 7, 3, 9]
+Step 2: [3, 7, 3, 8, 9]
+Step 3: [3, 3, 7, 8, 9]
+Step 4: [3, 3, 7, 8, 9]
+==== Sorting finished ====
+
+==== Bubble sort log ====
+Initial array: [1, 9, 8, 3, 5]
+Step 1: [1, 8, 3, 5, 9]
+Step 2: [1, 3, 5, 8, 9]
+Step 3: [1, 3, 5, 8, 9]
+Step 4: [1, 3, 5, 8, 9]
+==== Sorting finished ====
+
