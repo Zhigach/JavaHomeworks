@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /*
 Задание 1. Создайте программу на Python или Java, которая принимает два списка чисел и выполняет следующие действия:
 a. Рассчитывает среднее значение каждого списка.
@@ -25,8 +22,8 @@ b. Сравнивает эти средние значения и выводит
 - Объяснение того, какие сценарии покрыты тестами и почему вы выбрали именно эти сценарии.
  */
 public class ListComparator {
-    public static void compareLists(int[] first, int[] second) {
-        int result = compareListsCalculator(first, second);
+    public static void compareLists(IntArray first, IntArray second) throws IllegalAccessException {
+        int result = compareListsInternal(first, second);
         switch (result){
             case 1 -> System.out.println("Первый список имеет большее среднее значение");
             case 2 -> System.out.println("Второй список имеет большее среднее значение");
@@ -34,19 +31,12 @@ public class ListComparator {
         }
     }
 
-    private static int compareListsCalculator(int[] first, int[] second) {
-        if (calcAverage(first) > calcAverage(second))
+    private static int compareListsInternal(IntArray first, IntArray second) throws IllegalAccessException {
+        if (first.getAverage() > second.getAverage())
             return 1;
-        if (calcAverage(second) > calcAverage(first))
+        if (second.getAverage() > first.getAverage())
             return 2;
         return 0;
     }
 
-    private static double calcAverage(int[] arr) {
-        int summ = 0;
-        for (int number : arr) {
-            summ += number;
-        }
-        return (double) summ /arr.length;
-    }
 }

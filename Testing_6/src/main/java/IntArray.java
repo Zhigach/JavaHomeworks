@@ -5,7 +5,13 @@ public class IntArray {
         this.array = array;
     }
 
-    public int getAverage() {
-        return 0;
+    public double getAverage() throws IllegalAccessException {
+        if (array.length == 0)
+            throw new IllegalArgumentException("Array can't be empty");
+        int summ = 0;
+        for (int number : array) {
+            summ += number;
+        }
+        return (double) summ /array.length;
     }
 }
