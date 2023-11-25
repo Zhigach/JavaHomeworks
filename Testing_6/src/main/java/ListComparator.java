@@ -1,42 +1,39 @@
-/*
-Задание 1. Создайте программу на Python или Java, которая принимает два списка чисел и выполняет следующие действия:
-a. Рассчитывает среднее значение каждого списка.
-b. Сравнивает эти средние значения и выводит соответствующее сообщение:
-- ""Первый список имеет большее среднее значение"", если среднее значение первого списка больше.
-- ""Второй список имеет большее среднее значение"", если среднее значение второго списка больше.
-- ""Средние значения равны"", если средние значения списков равны.
+final class ListComparator {
+    private ListComparator() { }
 
-Важно:
-Приложение должно быть написано в соответствии с принципами объектно-ориентированного программирования.
-Используйте Pytest (для Python) или JUnit (для Java) для написания тестов, которые проверяют правильность работы программы. Тесты должны учитывать различные сценарии использования вашего приложения.
-Используйте pylint (для Python) или Checkstyle (для Java) для проверки качества кода.
-Сгенерируйте отчет о покрытии кода тестами. Ваша цель - достичь минимум 90% покрытия.
-
-
-*Формат и требования к сдаче: *
-Отчет о выполнении этого задания должен включать в себя следующие элементы:
-- Код программы
-- Код тестов
-- Отчет pylint/Checkstyle
-- Отчет о покрытии тестами
-- Объяснение того, какие сценарии покрыты тестами и почему вы выбрали именно эти сценарии.
- */
-public class ListComparator {
-    public static void compareLists(IntArray first, IntArray second) throws IllegalAccessException {
+    /**
+     * Methods comparing integer arrays
+     * and showing comparison results to stdout.
+     * @param first first array
+     * @param second second array
+     */
+    public static void compareLists(final IntArray first,
+                                    final IntArray second) {
         int result = compareListsInternal(first, second);
-        switch (result){
-            case 1 -> System.out.println("Первый список имеет большее среднее значение");
-            case 2 -> System.out.println("Второй список имеет большее среднее значение");
-            default -> System.out.println("Средние значения равны");
+        switch (result) {
+            case 1 ->
+                    System.out.println(
+                            "Первый список имеет большее среднее значение"
+                    );
+            case 2 ->
+                    System.out.println(
+                            "Второй список имеет большее среднее значение"
+                    );
+            default ->
+                    System.out.println(
+                            "Средние значения равны"
+                    );
         }
     }
 
-    private static int compareListsInternal(IntArray first, IntArray second) throws IllegalAccessException {
-        if (first.getAverage() > second.getAverage())
+    private static int compareListsInternal(final IntArray first,
+                                            final IntArray second) {
+        if (first.getAverage() > second.getAverage()) {
             return 1;
-        if (second.getAverage() > first.getAverage())
+        }
+        if (second.getAverage() > first.getAverage()) {
             return 2;
+        }
         return 0;
     }
-
 }
