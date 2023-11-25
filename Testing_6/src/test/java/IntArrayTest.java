@@ -10,20 +10,20 @@ class IntArrayTest {
     IntArray emptyArr = new IntArray(new int[]{});
 
     @Test
-    void getAverageZero() throws IllegalAccessException {
+    void getAverageZero() {
         assertEquals(0, arr0.getAverage());
     }
     @Test
-    void getAveragePositive() throws IllegalAccessException {
+    void getAveragePositive() {
         //3
         assertEquals(3, arrPos.getAverage());
     }
     @Test
-    void getAverageNegative() throws IllegalAccessException {
+    void getAverageNegative() {
         assertEquals(-3, arrNeg.getAverage());
     }
     @Test
-    void getAverageEmptyArray() throws IllegalAccessException {
+    void getAverageEmptyArray() {
         assertThrows(IllegalArgumentException.class, () -> emptyArr.getAverage());
     }
 

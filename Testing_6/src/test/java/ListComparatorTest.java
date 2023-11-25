@@ -14,7 +14,7 @@ class ListComparatorTest {
     IntArray arr3 = new IntArray(new int[]{0, 2, 0, 4, 5});
 
     @org.junit.jupiter.api.Test
-    void compareListsFirstOneGrater() throws IllegalAccessException {
+    void compareListsFirstOneGreater() {
         PrintStream stdout = System.out;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
@@ -25,7 +25,7 @@ class ListComparatorTest {
         assertEquals("Первый список имеет большее среднее значение\n", result);
     }
     @org.junit.jupiter.api.Test
-    void compareListsSecondOneGrater() throws IllegalAccessException {
+    void compareListsSecondOneGreater() {
         PrintStream stdout = System.out;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
@@ -36,7 +36,7 @@ class ListComparatorTest {
         assertEquals("Второй список имеет большее среднее значение\n", result);
     }
     @org.junit.jupiter.api.Test
-    void compareListsEquals() throws IllegalAccessException {
+    void compareListsEquals() {
         PrintStream stdout = System.out;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
