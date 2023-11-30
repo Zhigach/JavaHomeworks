@@ -28,6 +28,5 @@ public class Main {
         //sort_list_imperative(sorted);
         sorted = sort_declarative(sorted);
         System.out.println(Arrays.toString(sorted));
-
     }
 }
