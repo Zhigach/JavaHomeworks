@@ -52,6 +52,6 @@ public class Spiral {
     }
 
     public static void main(String[] args) {
-        printMatrix(Fill2dMatrixSpiral(3,4));
+        printMatrix(Fill2dMatrixSpiral(3,1));
     }
 }
