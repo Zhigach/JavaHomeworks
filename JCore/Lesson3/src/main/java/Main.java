@@ -20,11 +20,11 @@ public class Main {
                 "+7111147721",
                 10000,
                 LocalDate.of(1980,9,17));
-        Employee employee4 =  new Employee("Vasiliy Dark",
+        Employee employee4 =  new Head("Vasiliy Dark",
                 "Analyst",
                 "+799942342",
                 140000,
-                LocalDate.of(1992,2,4));
+                LocalDate.of(1955,2,4));
         Employee employee5 =  new Employee("John Doe",
                 "Scram master",
                 "+7963422423",
@@ -41,19 +41,19 @@ public class Main {
 
         Employee.printInfo(employeeList);
         System.out.println(Employee.findAverageAgeAndSalary(employeeList));
-        increaseSalaryForOldGuys(employeeList, 45, 5000);
+        Head.increaseSalaryForOldGuys(employeeList, 45, 5000);
         Employee.printInfo(employeeList);
         System.out.println(Employee.findAverageAgeAndSalary(employeeList));
 
-
+        System.out.println(Employee.datesComparator("2022-01-12", "2022-01-12"));
     }
 
-    private static void increaseSalaryForOldGuys(List<Employee> employeeList, int thresholdAge, double increment) {
-        for (Employee employee : employeeList) {
-            if (employee.getAge() >= thresholdAge) {
-                employee.addSalary(increment);
-            }
-        }
-    }
+//    private static void increaseSalaryForOldGuys(List<Employee> employeeList, int thresholdAge, double increment) {
+//        for (Employee employee : employeeList) {
+//            if (employee.getAge() >= thresholdAge) {
+//                employee.addSalary(increment);
+//            }
+//        }
+//    }
 }
 

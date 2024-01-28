@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 
 public class Employee {
@@ -88,4 +90,19 @@ public class Employee {
                 sumSalary/employeeList.size());
     }
 
+    /*
+    Написать прототип компаратора - метод внутри класса сотрудника, сравнивающий две даты,
+     представленные в виде трёх чисел гггг-мм-дд, без использования условного оператора.
+    */
+    /**
+     * Comparator prototype
+     * @param date1 "гггг-мм-дд" formatted date
+     * @param date2 "гггг-мм-дд" formatted date
+     * @return returns true if first date is earlier tha the second one
+     */
+    public static boolean datesComparator(String date1, String date2) {
+        LocalDate ld1 = LocalDate.parse(date1, DateTimeFormatter.ISO_LOCAL_DATE );
+        LocalDate ld2 = LocalDate.parse(date2, DateTimeFormatter.ISO_LOCAL_DATE );
+        return ld2.isAfter(ld1);
+    }
 }
