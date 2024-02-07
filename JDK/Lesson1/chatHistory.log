@@ -1,0 +1,24 @@
+Server: stranger connected
+Server: strangerBeaver connected
+strangerBeaver: Hi
+stranger: Who is here?!
+Server: You've been disconnected from the server.
+[2024-02-07] <Server>: stranger connected
+[2024-02-07] <Server>: stranger connected
+[2024-02-07] <stranger>: 123
+[2024-02-07] <Server>: You've been disconnected from the server.
+[2024-02-07T14:08:50.619045765] <Server>: stranger connected
+[2024-02-07T14:08:58.391141734] <Server>: strangerHood connected
+[2024-02-07T14:09:05.994934682] <strangerHood>: Test message
+[2024-02-07T14:09:15.969498099] <Server>: You've been disconnected from the server.
+[2024-02-07T14:21:30.274081215] <Server>: stranger connected
+[2024-02-07T14:21:32.811152833] <stranger>: 1234
+[2024-02-07T14:21:34.93463015] <Server>: You've been disconnected from the server.
+[2024-02-07T14:31:57] <Server>: stranger connected
+[2024-02-07T14:31:59] <stranger>: 123
+[2024-02-07T14:32:01] <Server>: stranger connected
+[2024-02-07T14:32:04] <stranger>: 124
+[2024-02-07T14:50:09] <Server>: stranger connected
+[2024-02-07T14:50:59] <Server>: stranger connected
+[2024-02-07T14:52:47] <Server>: stranger connected
+[2024-02-07T14:52:54] <stranger>: Hi!
