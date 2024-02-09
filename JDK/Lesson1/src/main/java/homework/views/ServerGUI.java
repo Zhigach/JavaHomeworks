@@ -1,12 +1,15 @@
-package homework;
+package homework.views;
+
+import homework.commons.Message;
+import homework.server.Server;
+import homework.server.ServerView;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
-public class ServerGUI extends JFrame implements MessageServerListener {
+public class ServerGUI extends JFrame implements ServerView {
     private static final int WINDOW_X_POS = 100;
     private static final int WINDOW_Y_POS = 100;
     private static final int WINDOW_WIDTH = 400;
@@ -19,10 +22,9 @@ public class ServerGUI extends JFrame implements MessageServerListener {
         return server;
     }
 
-    ServerGUI(Server server) {
-        this.server = server;
-        server.setGui(this);
-        server.addListener(this);
+    public ServerGUI() {
+        this.server = new Server(this);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(WINDOW_X_POS,WINDOW_Y_POS);
         setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
@@ -91,17 +93,15 @@ public class ServerGUI extends JFrame implements MessageServerListener {
         return true;
     }
     boolean startServer() {
-        server.startServer();
-        return true;
+        return server.startServer();
     }
     boolean stopServer() {
-        server.stopServer();
-        return true;
+        return server.stopServer();
     }
+
 
     @Override
-    public void messageReceived(String message, Client from, List<Client> recepientList) {
-        textArea.append(message + "\n");
+    public void showMessage(Message message) {
+        textArea.append(message.toString() + "\n");
     }
-
 }
