@@ -51,10 +51,11 @@ public class Client implements MessageServerListener {
     }
 
     public void sendMessage(String message, List<Client> clientList) {
-        if (!server.sendMessageRequest(new Message(message, this, clientList))) {
+        if (server.clientMessageReceived(new Message(message, this, clientList)) == false) {
             clientView.showMessage(new Message("Messaging is unavailable."));
         }
     }
+
 
     @Override
     public void messageReceived(Message message) {
