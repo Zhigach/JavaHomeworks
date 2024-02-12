@@ -12,22 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Server implements ListenableMessageServer {
-    private final ServerNetworking serverNetworkingAdapter;
+    private final ServerNetworking networkingAdapter;
     private final ServerView serverView;
     private final String LOG_FILE_NAME = "chatHistory.log";
-    private final List<MessageServerListener> listeners = new ArrayList<>();
     private boolean CONNECTION_READY = false;
     private final int capacity;
-    private final List<Client> clientList;
+    private final List<MessageServerListener> clientList = new ArrayList<>();
 
     public Server(ServerView serverView) {
-        this.serverNetworkingAdapter = new ServerNet(this);
+        this.networkingAdapter = new ServerNet(this);
         this.serverView = serverView;
-        clientList = new ArrayList<>();
         capacity = 10;
     }
 
-    public boolean connectClient(Client client) {
+    @Override
+    public boolean connectClient(MessageServerListener client) {
         if (clientList.size() < capacity && isReady()) {
             messageReceived(new Message(new Client("Server"), String.format("%s connected", client.getUsername())));
             return clientList.add(client);
@@ -37,20 +36,14 @@ public class Server implements ListenableMessageServer {
     }
 
     public boolean startServer(int port) {
-        serverNetworkingAdapter.startServer(port);
+        networkingAdapter.startServer(port);
         CONNECTION_READY = true;
         return true;
     }
 
     public boolean stopServer() {
-
         messageReceived(new Message(new Client("Server"), "You've been disconnected from the server."));
-        for (MessageServerListener listener : listeners) {
-            listener.setConnectionStatus(false);
-        }
-        listeners.removeAll(listeners);
-
-        serverNetworkingAdapter.stopServer();
+        networkingAdapter.stopServer();
         CONNECTION_READY = false;
         return true;
     }
@@ -59,6 +52,7 @@ public class Server implements ListenableMessageServer {
         return CONNECTION_READY;
     }
 
+    @Override
     public boolean clientMessageReceived(Message message) {
         if (isReady()) {
             messageReceived(message);
@@ -87,9 +81,7 @@ public class Server implements ListenableMessageServer {
     }
 
     private void notifyListeners(Message message) {
-        for (MessageServerListener listener : listeners) {
-            listener.messageReceived(message);
-        }
+        networkingAdapter.broadcastMessage(Message.fold(message));
     }
 
     public List<String> getChatHistory() {
@@ -108,9 +100,11 @@ public class Server implements ListenableMessageServer {
         serverView.showMessage(message);
     }
 
-    @Override
-    public void addListener(MessageServerListener listner) {
-        listeners.add(listner);
+    public String getAddress() {
+        return networkingAdapter.getAddress();
+    }
+    public String getPort() {
+        return networkingAdapter.getPort();
     }
 
 }

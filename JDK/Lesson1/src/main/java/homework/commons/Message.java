@@ -1,6 +1,7 @@
 package homework.commons;
 
 import homework.client.Client;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public class Message {
     Client sender;
     List<Client> recepientList;
 
-    public Message(String payload, Client sender, List<Client> recepientList) {
+    public Message(Client sender, String payload, List<Client> recepientList) {
         this.payload = payload;
         this.sender = sender;
         this.recepientList = recepientList;
@@ -45,14 +46,17 @@ public class Message {
 
     public static String fold(Message message) {
         JSONObject jsonObject = new JSONObject()
-                .accumulate("client", message.getSender())
-                .accumulate("payload", message.getPayload());
+                .accumulate("client", message.getSender().getUsername())
+                .accumulate("payload", message.getPayload())
+                .accumulate("recipients", new JSONArray(message.getRecepientList()));
         return jsonObject.toString();
     }
 
     public static Message unfold(String lineMessage) {
         JSONObject jsonObject = new JSONObject(lineMessage);
-
-        return new Message(new Client(jsonObject.getString("client")), jsonObject.getString("payload"));
+        return new Message(
+                new Client(jsonObject.getString("client")),
+                jsonObject.getString("payload")
+        );
     }
 }

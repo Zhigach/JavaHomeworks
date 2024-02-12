@@ -3,11 +3,14 @@ package homework.views;
 import homework.commons.Message;
 import homework.server.Server;
 import homework.server.ServerView;
+import jdk.net.Sockets;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.Socket;
+import java.util.Random;
 
 public class ServerGUI extends JFrame implements ServerView {
     private static final int WINDOW_X_POS = 100;
@@ -87,13 +90,16 @@ public class ServerGUI extends JFrame implements ServerView {
         }
         if (newStatus) {
             startServer();
+            setTitle(WINDOW_TITLE + String.format(" @ %s:%s",server.getAddress(), server.getPort()));
         } else {
             stopServer();
+            setTitle(WINDOW_TITLE);
         }
         return true;
     }
     boolean startServer() {
-        return server.startServer();
+        textArea.setText("");
+        return server.startServer(5555);
     }
     boolean stopServer() {
         return server.stopServer();
