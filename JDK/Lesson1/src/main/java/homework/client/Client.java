@@ -1,27 +1,24 @@
 package homework.client;
 
 import homework.commons.Message;
-import homework.server.Server;
+import homework.networks.ClientNet;
 import homework.views.ClientGUI;
 
 import java.util.List;
 
 public class Client implements MessageServerListener {
+    private boolean isConnected = false;
+    private final ClientNetworking networkingAdapter;
     private ClientView clientView;
-    private Server server; // TODO use socket
     private String username;
     private String password;
     private String ipAddress;
     private String networkPort;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
-
+    @Override
     public String getUsername() {
         return username;
     }
@@ -31,40 +28,47 @@ public class Client implements MessageServerListener {
     }
 
     public Client(String username) {
+        this.networkingAdapter = new ClientNet(this);
         this.username = username;
     }
 
-    public void connectToServer(Server server) {
-        if (server.connectClient(this)) {
-            this.server = server;
-            server.addListener(this);
+    public void connectToServer(String ip, int port) {
+        if (networkingAdapter.startConnection(ip, port)) {
             clientView.showMessage(new Message("Connected to server."));
-            clientView.showMessage(new Message("Loading chat history...."));
-            for (String s : server.getChatHistory()) {
-                clientView.showMessage(new Message(s));
-            }
-            clientView.showMessage(new Message("\n---New messages---"));
             setConnectionStatus(true);
         } else {
-            messageReceived(new Message("Connection refused."));
+            clientView.showMessage(new Message("Connected refused."));
         }
     }
 
-    public void sendMessage(String message, List<Client> clientList) {
-        if (!server.sendMessageRequest(new Message(message, this, clientList))) {
-            clientView.showMessage(new Message("Messaging is unavailable."));
+    public void sendMessage(String message, List<Client> clientList, boolean isTechnicalMessage) {
+        if (isConnected) {
+            networkingAdapter.sendMessage(Message.fold(new Message(this, message, clientList)));
+            if (!isTechnicalMessage) {
+                clientView.showMessage(new Message(new Client("Me"), message));
+            }
+        } else {
+            clientView.showMessage(new Message("You're offline. Messaging is unavailable."));
         }
     }
 
     @Override
     public void messageReceived(Message message) {
-        // filtration of recepients: && recepientList.stream().map(x -> getUsername().equals(username)).findAny().isPresent()) {
         clientView.showMessage(message);
     }
 
     @Override
+    public void disconnectFromServer() {
+        if (isConnected) {
+            sendMessage("]^ESCEnd session", null, true);
+            setConnectionStatus(false);
+            networkingAdapter.stopConnection();
+        }
+    }
+    @Override
     public void setConnectionStatus(boolean state) {
         clientView.setConnected(state);
+        isConnected = state;
     }
     public void setView(ClientGUI clientGUI) {
         this.clientView = clientGUI;

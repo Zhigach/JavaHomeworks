@@ -36,3 +36,77 @@ Server: You've been disconnected from the server.
 [2024-02-09T13:33:32] <Server>: You've been disconnected from the server.
 [2024-02-09T13:38:05] <Server>: stranger connected
 [2024-02-09T13:38:07] <Server>: You've been disconnected from the server.
+[2024-02-11T17:49:14] <homework.client.Client@1cf3a04f>: 1
+[2024-02-11T17:53:37] <homework.client.Client@256627fb>: 1
+[2024-02-11T17:57:33] <homework.client.Client@48d40e19>: 1
+[2024-02-11T18:03:03] <stranger>: Hello there
+[2024-02-11T18:03:46] <stranger>: Bug report: I have empty chat window
+[2024-02-11T18:03:57] <Server>: You've been disconnected from the server.
+[2024-02-12T09:54:01] <Server>: stranger connected
+[2024-02-12T09:54:06] <Server>: You've been disconnected from the server.
+[2024-02-12T10:06:15] <Server>: stranger connected
+[2024-02-12T10:06:21] <Server>: You've been disconnected from the server.
+[2024-02-12T10:07:23] <Server>: stranger connected
+[2024-02-12T10:08:54] <Server>: You've been disconnected from the server.
+[2024-02-12T10:11:52] <Server>: stranger connected
+[2024-02-12T10:13:59] <Server>: stranger connected
+[2024-02-12T10:14:13] <Server>: stranger connected
+[2024-02-12T10:14:40] <stranger>: 1
+[2024-02-12T10:15:23] <Server>: stranger2 connected
+[2024-02-12T10:25:07] <Server>: stranger connected
+[2024-02-12T10:31:20] <Server>: stranger connected
+[2024-02-12T10:31:48] <Server>: stranger connected
+[2024-02-12T10:32:14] <Server>: strangerFixed connected
+[2024-02-12T10:37:41] <stranger>: 1
+[2024-02-12T10:38:07] <strangerFixed>: 2
+[2024-02-12T10:38:32] <Server>: You've been disconnected from the server.
+[2024-02-12T11:12:43] <Server>: stranger connected
+[2024-02-12T11:12:53] <Server>: kurwa connected
+[2024-02-12T11:12:58] <stranger>: Hi!
+[2024-02-12T11:14:12] <Server>: stranger connected
+[2024-02-12T11:14:27] <Server>: stranger connected
+[2024-02-12T11:18:19] <stranger>: 2
+[2024-02-12T11:20:01] <Server>: stranger connected
+[2024-02-12T11:20:04] <stranger>: Test
+[2024-02-12T11:20:13] <Server>: bear connected
+[2024-02-12T11:20:17] <stranger>: Hi
+[2024-02-12T11:20:20] <bear>: Hi
+[2024-02-12T11:23:05] <Server>: You've been disconnected from the server.
+[2024-02-12T11:27:08] <Server>: stranger connected
+[2024-02-12T11:27:10] <Server>: You've been disconnected from the server.
+[2024-02-12T11:27:10] <Server>: stranger disconnected.
+[2024-02-12T11:27:34] <Server>: stranger connected
+[2024-02-12T11:27:37] <Server>: stranger disconnected.
+[2024-02-12T12:35:11] <Server>: triangle connected
+[2024-02-12T12:35:14] <Server>: stranger connected
+[2024-02-12T12:35:18] <triangle>: 1
+[2024-02-12T12:35:33] <stranger>: What?
+[2024-02-12T12:35:52] <Server>: You've been disconnected from the server.
+[2024-02-12T12:35:52] <Server>: stranger disconnected.
+[2024-02-12T12:35:52] <Server>: triangle disconnected.
+[2024-02-12T12:38:31] <Server>: stranger connected
+[2024-02-12T12:38:33] <Server>: You've been disconnected from the server.
+[2024-02-12T12:38:33] <Server>: stranger disconnected.
+[2024-02-12T12:42:49] <Server>: stranger connected
+[2024-02-12T12:42:53] <stranger>: 12
+[2024-02-12T12:42:59] <Server>: You've been disconnected from the server.
+[2024-02-12T12:44:08] <Server>: strangerTest connected
+[2024-02-12T12:44:09] <strangerTest>: test
+[2024-02-12T12:49:53] <Server>: stranger connected
+[2024-02-12T12:49:56] <stranger>: 1
+[2024-02-12T12:49:58] <Server>: You've been disconnected from the server.
+[2024-02-12T12:53:02] <Server>: stranger connected
+[2024-02-12T12:53:05] <stranger>: aslkdjd
+[2024-02-12T12:53:08] <Server>: You've been disconnected from the server.
+[2024-02-12T12:53:08] <Server>: stranger disconnected.
+[2024-02-12T12:53:30] <Server>: stranger connected
+[2024-02-12T12:53:34] <stranger>: Hi again
+[2024-02-12T12:53:37] <Server>: stranger disconnected.
+[2024-02-12T15:05:29] <Server>: stranger connected
+[2024-02-12T15:05:44] <stranger>: Nice!
+[2024-02-12T15:05:53] <Server>: lolkek connected
+[2024-02-12T15:05:58] <lolkek>: Wow!
+[2024-02-12T15:06:11] <stranger>: Bad naming, btw
+[2024-02-12T15:06:16] <Server>: You've been disconnected from the server.
+[2024-02-12T15:06:16] <Server>: lolkek disconnected.
+[2024-02-12T15:06:16] <Server>: stranger disconnected.

@@ -3,9 +3,8 @@ package homework.server;
 import homework.client.MessageServerListener;
 import homework.client.Client;
 import homework.commons.Message;
+import homework.networks.ServerNet;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -13,39 +12,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Server implements ListenableMessageServer {
+    private final ServerNetworking networkingAdapter;
     private final ServerView serverView;
     private final String LOG_FILE_NAME = "chatHistory.log";
-    private final List<MessageServerListener> listeners = new ArrayList<>();
     private boolean CONNECTION_READY = false;
     private final int capacity;
-    private final List<Client> clientList;
+    private final List<MessageServerListener> clientList = new ArrayList<>();
 
     public Server(ServerView serverView) {
+        this.networkingAdapter = new ServerNet(this);
         this.serverView = serverView;
-        clientList = new ArrayList<>();
         capacity = 10;
     }
 
-    public boolean connectClient(Client client) {
-        if (clientList.size() < capacity && isReady() ) {
-            messageReceived(new Message(String.format("%s connected", client.getUsername()), new Client("Server")));
+    @Override
+    public boolean connectClient(MessageServerListener client) {
+        if (clientList.size() < capacity && isReady()) {
+            messageReceived(new Message(new Client("Server"), String.format("%s connected", client.getUsername())));
             return clientList.add(client);
         } else {
             return false;
         }
     }
 
-    public boolean startServer() {
+    public boolean startServer(int port) {
+        networkingAdapter.startServer(port);
         CONNECTION_READY = true;
         return true;
     }
+
     public boolean stopServer() {
+        messageReceived(new Message(new Client("Server"), "You've been disconnected from the server."));
+        networkingAdapter.stopServer();
         CONNECTION_READY = false;
-        messageReceived(new Message("You've been disconnected from the server.", new Client("Server")));
-        for (MessageServerListener listener : listeners) {
-            listener.setConnectionStatus(false);
-        }
-        listeners.removeAll(listeners);
         return true;
     }
 
@@ -53,7 +52,8 @@ public class Server implements ListenableMessageServer {
         return CONNECTION_READY;
     }
 
-    public boolean sendMessageRequest(Message message) { // filtered at the client side
+    @Override
+    public boolean clientMessageReceived(Message message) {
         if (isReady()) {
             messageReceived(message);
             return true;
@@ -63,7 +63,7 @@ public class Server implements ListenableMessageServer {
     }
 
     private void logMessage(Message message) {
-        try (FileWriter fileWriter = new FileWriter(LOG_FILE_NAME,true)) {
+        try (FileWriter fileWriter = new FileWriter(LOG_FILE_NAME, true)) {
             String modifiedMessage =
                     String.format("[%s] <%s>: %s\n", LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS),
                             message.getSender().getUsername(),
@@ -74,16 +74,14 @@ public class Server implements ListenableMessageServer {
         }
     }
 
-    private void messageReceived(Message message){
+    private void messageReceived(Message message) {
         notifyListeners(message);
         showMessageAtGUI(message);
         logMessage(message);
     }
 
     private void notifyListeners(Message message) {
-        for (MessageServerListener listener : listeners) {
-            listener.messageReceived(message);
-        }
+        networkingAdapter.broadcastMessage(Message.fold(message));
     }
 
     public List<String> getChatHistory() {
@@ -97,15 +95,16 @@ public class Server implements ListenableMessageServer {
             throw new RuntimeException(e);
         }
     }
+
     private void showMessageAtGUI(Message message) {
         serverView.showMessage(message);
     }
-    @Override
-    public void addListener(MessageServerListener listner) {
-        listeners.add(listner);
+
+    public String getAddress() {
+        return networkingAdapter.getAddress();
+    }
+    public String getPort() {
+        return networkingAdapter.getPort();
     }
 
-    public JFrame getGUI() {
-        return (JFrame) serverView;
-    }
 }

@@ -3,7 +3,6 @@ package homework.views;
 import homework.client.Client;
 import homework.client.ClientView;
 import homework.commons.Message;
-import homework.server.Server;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,15 +16,14 @@ public class ClientGUI extends JFrame implements ClientView {
     private static final int WINDOW_HEIGHT = 600;
     private static final String WINDOW_TITLE = "Client App";
     private final JTextArea textArea;
-    private final Server server;
+    private JTextField addressField;
+    private JTextField portField;
     private Client client;
     private JButton sendButton;
     private JTextField messageField;
     private JButton loginButton;
-    private JTextField loginField;
 
     public ClientGUI(ServerGUI serverGUI) {
-        this.server = serverGUI.getServer();
         setLocationRelativeTo(serverGUI);
 
         initialSetUp();
@@ -37,19 +35,26 @@ public class ClientGUI extends JFrame implements ClientView {
         setVisible(true);
     }
 
+    @Override
+    public void dispose() {
+        if (client != null) {
+            client.disconnectFromServer();
+        }
+        super.dispose();
+    }
 
     private void initialSetUp() {
         setLocation(WINDOW_X_POS, WINDOW_Y_POS);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 
         setTitle(WINDOW_TITLE);
-        setBackground(Color.RED);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     private void setUpLoginPanel() {
         JPanel loginPanel = new JPanel(new GridLayout(2, 3));
-        JTextField addressField = new JTextField("8.8.8.8");
-        JTextField portField = new JTextField("443");
+        addressField = new JTextField("127.0.0.1");
+        portField = new JTextField("5555");
         JTextField loginField = new JTextField("stranger");
         JTextField passwordField = new JTextField("******");
 
@@ -72,7 +77,8 @@ public class ClientGUI extends JFrame implements ClientView {
             public void actionPerformed(ActionEvent e) {
                 client = new Client(loginField.getText());
                 client.setView(ClientGUI.this);
-                client.connectToServer(server);
+                client.connectToServer(addressField.getText(), Integer.parseInt(portField.getText()));
+                client.setIpAddress(addressField.getText());
             }
         });
         return loginButton;
@@ -83,7 +89,7 @@ public class ClientGUI extends JFrame implements ClientView {
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                client.sendMessage(messageField.getText(), null);
+                client.sendMessage(messageField.getText(), null, false);
                 messageField.setText("");
             }
         });
@@ -106,6 +112,13 @@ public class ClientGUI extends JFrame implements ClientView {
 
         add(sendMessagePanel, BorderLayout.SOUTH);
         add(textPanel);
+    }
+
+    private String getAddress() {
+        return addressField.getText();
+    }
+    private int getPort() {
+        return Integer.parseInt(portField.getText());
     }
 
     @Override
