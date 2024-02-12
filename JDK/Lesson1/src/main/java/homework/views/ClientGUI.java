@@ -3,7 +3,6 @@ package homework.views;
 import homework.client.Client;
 import homework.client.ClientView;
 import homework.commons.Message;
-import homework.server.Server;
 
 import javax.swing.*;
 import java.awt.*;

@@ -3,14 +3,11 @@ package homework.views;
 import homework.commons.Message;
 import homework.server.Server;
 import homework.server.ServerView;
-import jdk.net.Sockets;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.Socket;
-import java.util.Random;
 
 public class ServerGUI extends JFrame implements ServerView {
     private static final int WINDOW_X_POS = 100;
@@ -19,7 +16,7 @@ public class ServerGUI extends JFrame implements ServerView {
     private static final int WINDOW_HEIGHT = 600;
     private static final String WINDOW_TITLE = "Server App";
     private final JTextArea textArea;
-    private Server server;
+    private final Server server;
 
     public Server getServer() {
         return server;
@@ -28,15 +25,22 @@ public class ServerGUI extends JFrame implements ServerView {
     public ServerGUI() {
         this.server = new Server(this);
 
+        inintialSetUp();
+        textArea = new JTextArea();
+        setUpButtonPanel();
+        setUpTextArea();
+
+        setVisible(true);
+    }
+
+    private void inintialSetUp() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(WINDOW_X_POS,WINDOW_Y_POS);
         setSize(WINDOW_WIDTH,WINDOW_HEIGHT);
-
         setTitle(WINDOW_TITLE);
-        setBackground(Color.RED);
+    }
 
-        textArea = new JTextArea();
-
+    void setUpButtonPanel() {
         JPanel buttonPanel = new JPanel(new GridLayout(1,2));
         JButton startBtn = getStartServerBtn(server);
         JButton stopBtn = new JButton("Stop server!");
@@ -55,13 +59,14 @@ public class ServerGUI extends JFrame implements ServerView {
         buttonPanel.add(stopBtn);
         buttonPanel.setSize(getWidth(), getHeight()/10);
 
+        add(buttonPanel, BorderLayout.SOUTH);
+    }
+    void setUpTextArea() {
         JPanel textPanel = new JPanel(new GridLayout(1, 1));
         JScrollPane scrollPane = new JScrollPane(textArea);
         textPanel.add(scrollPane);
 
         add(textPanel);
-        add(buttonPanel, BorderLayout.SOUTH);
-        setVisible(true);
     }
 
     private JButton getStartServerBtn(Server server) {
