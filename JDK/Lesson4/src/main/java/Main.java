@@ -11,6 +11,5 @@ public class Main {
         System.out.println(employeeDB.getEmployeeByNumber("22345"));
         System.out.println(employeeDB.getPhoneNumberByName("Ilon"));
         System.out.println(employeeDB.searchByWorkExperience(3));
-
     }
 }
