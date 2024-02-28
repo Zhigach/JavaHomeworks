@@ -9,7 +9,6 @@ public class Game {
     static final int DOORS_NUMBER = 3;
     boolean[] doorsContentIsWinning = new boolean[DOORS_NUMBER];
     int winningDoorNumber;
-    boolean[] doorIsDiscovered = new boolean[DOORS_NUMBER];
     Random rand;
     Monti monti;
     @Setter
@@ -25,7 +24,6 @@ public class Game {
 
     public void start() {
         int initialChoice = player.chooseDoorFirstStep();
-        doorIsDiscovered[initialChoice] = true;
         int montiDiscoveredDoor = monti.openAnotherDoor(winningDoorNumber, initialChoice);
         int secondPlayerTry = player.rechooseDoor(montiDiscoveredDoor);
         results.add(new GameResult(secondPlayerTry == winningDoorNumber));
