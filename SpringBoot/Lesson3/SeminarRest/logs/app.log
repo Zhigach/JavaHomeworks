@@ -1,0 +1,158 @@
+10:10:35.029 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 331792 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+10:10:35.029 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+10:10:35.029 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+10:10:35.775 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 0.893 seconds (process running for 1.594)
+10:10:37.992 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 331865 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+10:10:37.994 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+10:10:37.994 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "test"
+10:10:39.085 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 1.459 seconds (process running for 1.925)
+10:11:36.722 [http-nio-8080-exec-1] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+
+10:16:11.360 [http-nio-8080-exec-6] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+
+11:27:43.504 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 337421 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+11:27:43.504 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+11:27:43.505 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+11:27:44.244 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 0.933 seconds (process running for 1.69)
+11:27:46.579 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 337491 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+11:27:46.580 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+11:27:46.581 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "test"
+11:27:47.674 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 1.545 seconds (process running for 2.039)
+11:28:22.357 [http-nio-8080-exec-3] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+11:28:22.381 [http-nio-8080-exec-4] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+11:28:42.102 [http-nio-8080-exec-10] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+11:28:42.113 [http-nio-8080-exec-2] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+11:28:53.403 [http-nio-8080-exec-7] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+11:28:53.414 [http-nio-8080-exec-8] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+11:59:16.186 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 338600 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+11:59:16.187 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+11:59:16.187 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+12:00:35.479 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 338757 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+12:00:35.480 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+12:00:35.481 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+12:01:08.538 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 338844 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+12:01:08.539 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+12:01:08.539 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+12:01:09.279 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 0.882 seconds (process running for 1.551)
+12:01:11.596 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 338923 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+12:01:11.598 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+12:01:11.598 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "test"
+12:01:12.666 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 1.436 seconds (process running for 1.931)
+12:01:31.142 [http-nio-8080-exec-4] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+12:01:31.172 [http-nio-8080-exec-5] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+12:08:03.635 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 339138 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+12:08:03.636 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+12:08:03.636 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "test"
+12:08:04.583 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.11 seconds (process running for 1.81)
+12:08:06.688 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 339215 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+12:08:06.690 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+12:08:06.691 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "test"
+12:08:07.725 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 1.411 seconds (process running for 1.871)
+12:09:45.778 [http-nio-8080-exec-3] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+12:09:45.810 [http-nio-8080-exec-4] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+12:09:45.967 [http-nio-8080-exec-10] ERROR r.g.S.repository.ListUserRepository - User with name John Doe Jr. already exists.
+12:09:45.991 [http-nio-8080-exec-2] ERROR r.g.S.repository.ListUserRepository - User with name John Doe already exists.
+12:14:06.987 [http-nio-8080-exec-10] INFO  r.g.S.services.NotificationService - New user has been created: Suspicious Stranger
+12:15:30.782 [http-nio-8080-exec-3] ERROR r.g.S.repository.ListUserRepository - User with name Suspicious Stranger already exists.
+21:35:04.650 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 168839 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:35:04.650 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:35:04.651 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:35:06.565 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 2.086 seconds (process running for 2.948)
+21:35:09.032 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 168917 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:35:09.034 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:35:09.034 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:35:11.484 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.841 seconds (process running for 3.512)
+21:43:08.957 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 169643 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:43:08.958 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:43:08.958 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:43:10.674 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.839 seconds (process running for 2.467)
+21:43:12.887 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 169718 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:43:12.887 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:43:12.888 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:43:15.468 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.941 seconds (process running for 3.512)
+21:45:45.823 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 170018 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:45:45.823 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:45:45.824 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:45:47.438 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.741 seconds (process running for 2.394)
+21:45:49.517 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 170094 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:45:49.520 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:45:49.520 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:45:52.175 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 3.046 seconds (process running for 3.522)
+21:46:24.219 [http-nio-8080-exec-2] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+21:50:14.331 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 170397 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:50:14.332 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:50:14.332 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:50:15.932 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.741 seconds (process running for 2.358)
+21:50:17.993 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 170473 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:50:17.994 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:50:17.994 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:50:20.363 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.726 seconds (process running for 3.215)
+21:55:13.901 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 170763 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:55:13.902 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:55:13.903 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:55:15.691 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.982 seconds (process running for 2.719)
+21:55:17.676 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 170840 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:55:17.677 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:55:17.677 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:55:20.189 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.869 seconds (process running for 3.322)
+21:55:59.561 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 170961 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:55:59.561 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:55:59.561 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+21:56:01.051 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.616 seconds (process running for 2.336)
+21:56:03.125 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 171036 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+21:56:03.127 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+21:56:03.128 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+21:56:05.463 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.743 seconds (process running for 3.215)
+22:04:09.264 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 171602 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:04:09.265 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:04:09.265 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+22:04:10.948 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.826 seconds (process running for 2.504)
+22:04:13.055 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 171680 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:04:13.057 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:04:13.057 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+22:04:15.577 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.882 seconds (process running for 3.337)
+22:05:12.031 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 171850 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:05:12.031 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:05:12.032 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+22:05:13.696 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.808 seconds (process running for 2.477)
+22:05:15.838 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 171927 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:05:15.840 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:05:15.841 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+22:05:18.265 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.828 seconds (process running for 3.319)
+22:05:22.121 [http-nio-8080-exec-1] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+22:25:01.423 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 173176 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:25:01.424 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:25:01.424 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+22:25:02.999 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.696 seconds (process running for 2.313)
+22:25:05.256 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 173270 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:25:05.256 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:25:05.257 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+22:25:07.563 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.789 seconds (process running for 3.308)
+22:25:14.310 [http-nio-8080-exec-1] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+22:25:26.216 [http-nio-8080-exec-4] ERROR r.g.S.repository.H2UserRepository - User with name John Doe Jr. already exists.
+22:28:18.335 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 173542 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:28:18.335 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:28:18.336 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+22:28:19.867 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.654 seconds (process running for 2.232)
+22:28:21.838 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 173617 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:28:21.840 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:28:21.840 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+22:28:24.353 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.866 seconds (process running for 3.332)
+22:28:31.591 [http-nio-8080-exec-1] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+22:28:32.886 [http-nio-8080-exec-3] ERROR r.g.S.repository.H2UserRepository - User with name John Doe Jr. already exists.
+22:29:31.763 [main] INFO  r.g.S.SeminarRestApplicationTests - Starting SeminarRestApplicationTests using Java 17.0.6 with PID 173788 (started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:29:31.763 [main] DEBUG r.g.S.SeminarRestApplicationTests - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:29:31.764 [main] INFO  r.g.S.SeminarRestApplicationTests - The following 1 profile is active: "prod"
+22:29:33.230 [main] INFO  r.g.S.SeminarRestApplicationTests - Started SeminarRestApplicationTests in 1.586 seconds (process running for 2.278)
+22:29:35.293 [main] INFO  r.g.S.SeminarRestApplication - Starting SeminarRestApplication v0.0.1-SNAPSHOT using Java 17.0.6 with PID 173863 (/home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest/target/SeminarRest-0.0.1-SNAPSHOT.jar started by zal in /home/zal/Documents/lessons/GB/Java/JavaHomeworks/SpringBoot/Lesson3/SeminarRest)
+22:29:35.295 [main] DEBUG r.g.S.SeminarRestApplication - Running with Spring Boot v3.2.3, Spring v6.1.4
+22:29:35.296 [main] INFO  r.g.S.SeminarRestApplication - The following 1 profile is active: "prod"
+22:29:37.673 [main] INFO  r.g.S.SeminarRestApplication - Started SeminarRestApplication in 2.79 seconds (process running for 3.272)
+22:29:50.998 [http-nio-8080-exec-1] INFO  r.g.S.services.NotificationService - New user has been created: John Doe Jr.
+22:29:52.199 [http-nio-8080-exec-3] ERROR r.g.S.repository.H2UserRepository - User with name John Doe Jr. already exists.
+22:30:21.303 [http-nio-8080-exec-7] ERROR r.g.S.repository.H2UserRepository - User with name John Doe Jr. already exists.
+22:30:21.317 [http-nio-8080-exec-9] INFO  r.g.S.services.NotificationService - New user has been created: John Doe
+22:30:21.337 [http-nio-8080-exec-10] INFO  r.g.S.services.NotificationService - New user has been created: Suspicious Stranger
+22:30:21.446 [http-nio-8080-exec-7] ERROR r.g.S.repository.H2UserRepository - User with name John Doe Jr. already exists.
+22:30:21.460 [http-nio-8080-exec-9] ERROR r.g.S.repository.H2UserRepository - User with name John Doe already exists.
+22:30:21.472 [http-nio-8080-exec-10] ERROR r.g.S.repository.H2UserRepository - User with name Suspicious Stranger already exists.
