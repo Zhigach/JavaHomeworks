@@ -1,0 +1,289 @@
+{
+  "collection": {
+    "info": {
+      "_postman_id": "47f91f35-8a8b-483a-b615-e449115b4015",
+      "name": "REST API testing",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "updatedAt": "2024-03-21T09:12:30.000Z",
+      "uid": "33748068-47f91f35-8a8b-483a-b615-e449115b4015",
+      "createdAt": null,
+      "lastUpdatedBy": null
+    },
+    "item": [
+      {
+        "name": "Get users list",
+        "id": "07d389d1-0604-468f-9070-fcb9c94a3da7",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/users",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-07d389d1-0604-468f-9070-fcb9c94a3da7"
+      },
+      {
+        "name": "Register new user",
+        "id": "f1ebde98-ef3f-4225-b471-775618fe6ec2",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n\t\"name\": \"John Doe Jr.\",\n\t\"age\": 5,\n\t\"email\": \"minecraft_rulezz@list.box\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "localhost:8080/users",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-f1ebde98-ef3f-4225-b471-775618fe6ec2"
+      },
+      {
+        "name": "Register 2nd user",
+        "id": "7f60bc39-4fd1-43fe-8a2a-935f29ba502a",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"John Doe\",\n\t\"age\": 35,\n\t\"email\": \"pentest@list.box\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "localhost:8080/users",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-7f60bc39-4fd1-43fe-8a2a-935f29ba502a"
+      },
+      {
+        "name": "Register by parameters",
+        "id": "dc4fc1dd-b06a-4837-9c7a-ea0449b4609c",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/users/create?name=Suspicious%20Stranger&age=100500&email=notavirus@free.com",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users",
+              "create"
+            ],
+            "query": [
+              {
+                "key": "name",
+                "value": "Suspicious%20Stranger"
+              },
+              {
+                "key": "age",
+                "value": "100500"
+              },
+              {
+                "key": "email",
+                "value": "notavirus@free.com"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-dc4fc1dd-b06a-4837-9c7a-ea0449b4609c"
+      },
+      {
+        "name": "Register by parameters Check GET",
+        "id": "529bdfc1-6004-4390-9f13-f717826317ba",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"John Doe\",\n\t\"age\": 35,\n\t\"email\": \"pentest@list.box\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "localhost:8080/users/create?name=Suspicious%20Stranger&age=100500&email=notavirus@free.com",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users",
+              "create"
+            ],
+            "query": [
+              {
+                "key": "name",
+                "value": "Suspicious%20Stranger"
+              },
+              {
+                "key": "age",
+                "value": "100500"
+              },
+              {
+                "key": "email",
+                "value": "notavirus@free.com"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-529bdfc1-6004-4390-9f13-f717826317ba"
+      },
+      {
+        "name": "New Request Copy",
+        "id": "7057d006-4995-4ac9-959c-71532884c101",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/users",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "users"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-7057d006-4995-4ac9-959c-71532884c101"
+      },
+      {
+        "name": "Filter users",
+        "id": "84f55dca-0f23-40f6-b27c-97a067a11ca6",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/tasks/filterUsersByAge?age=10",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "tasks",
+              "filterUsersByAge"
+            ],
+            "query": [
+              {
+                "key": "age",
+                "value": "10"
+              }
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-84f55dca-0f23-40f6-b27c-97a067a11ca6"
+      },
+      {
+        "name": "Filter users (another way)",
+        "id": "63dfec4a-53f1-42e3-8a11-38260efc9fa9",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/tasks/filter/10",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "tasks",
+              "filter",
+              "10"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-63dfec4a-53f1-42e3-8a11-38260efc9fa9"
+      },
+      {
+        "name": "Calculate average age",
+        "id": "fbf4d478-14c5-45ed-b87f-1b2caeb57b48",
+        "protocolProfileBehavior": {
+          "disableBodyPruning": true
+        },
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "localhost:8080/tasks/calculateAverageAge",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "tasks",
+              "calculateAverageAge"
+            ]
+          }
+        },
+        "response": [],
+        "uid": "33748068-fbf4d478-14c5-45ed-b87f-1b2caeb57b48"
+      }
+    ]
+  }
+}
