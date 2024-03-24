@@ -18,9 +18,6 @@ import java.util.List;
 @RequestMapping("/")
 public class UserController {
 
-    //@Autowired
-    //private User user;
-
     private final UserService userService;
     private final DataProcessingService dataProcessingService;
 
@@ -42,7 +39,6 @@ public class UserController {
     @PostMapping("/create-user")
     public String startSession(User user, Model model) {
         userService.getUser(user);
-        //TODO call calculations
         List<Long> durations = dataProcessingService.getDurations(user.getBirthDate());
         model.addAttribute("durations", durations);
         model.addAttribute("user", user);
