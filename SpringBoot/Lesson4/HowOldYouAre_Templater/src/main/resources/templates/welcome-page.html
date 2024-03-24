@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+    <title>Your name</title>
+</head>
+<body>
+<h3>How can we call you?</h3>
+
+<form th:action="@{/create-user}" th:object="${user}" method="post">
+    <label for="userName">Your name:</label>
+    <input type="text" th:field="*{name}" id="userName" placeholder="Name" required="required"/>
+    <label for="birthDate">Your birthdate:</label>
+    <input type="date" th:field="*{birthDate}" id="birthDate" required="required"/>
+    <input type="submit" value="Continue">
+
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Your age is...</title>
+</head>
+<body>
+<h3><b th:text="${user.name}"></b>, you're that old:</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Years</th>
+        <th>Months</th>
+        <th>Weeks</th>
+        <th>Days</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:each="duration : ${durations}" th:text="${duration}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
