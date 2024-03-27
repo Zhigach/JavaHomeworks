@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgresdb
+    username: book_store
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
