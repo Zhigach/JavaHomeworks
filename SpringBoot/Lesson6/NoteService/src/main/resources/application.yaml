@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    #url: jdbc:postgresql://localhost:5432/postgresdb
+    url: jdbc:h2:mem:notesdb
+    driver-class-name: org.h2.Driver
+    username: note_service
+    password: secret
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    #hibernate:
+      #ddl-auto: update
+    #show-sql: true
